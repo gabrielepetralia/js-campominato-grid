@@ -1,15 +1,46 @@
+const generate = document.querySelector(".generate-grid")
+const reset = document.querySelector(".reset-grid")
+const btnGenerateGrid = document.querySelector(".btn-generate-grid")
+const btnResetGrid = document.querySelector(".btn-reset-grid")
+
 const grid = document.querySelector(".grid-container")
-const max = 100;
-for(let i = 0; i < max; i++)
-{
-  const cella = document.createElement("div")
-  cella.classList.add("cell")
-  if(!(i%Math.sqrt(max)))
+
+btnGenerateGrid.addEventListener("click", function(){
+  const diff = document.querySelector(".select-diff").value;
+  let max;
+  switch(diff)
   {
-    const row = document.createElement("div")
-    row.classList.add("grid-row")
-    grid.append(row);
+    case("diff-1") :
+      max = 100;
+      break;
+    case("diff-2") :
+      max = 81;
+      break;
+    case("diff-3") :
+      max = 49;
+      break;
   }
-  const row = document.querySelector(".grid-row:last-child")
-  row.append(cella);
-}
+
+  for(let i = 0; i < max; i++)
+  {
+    const cella = document.createElement("div")
+    cella.classList.add("cell")
+    if(!(i%Math.sqrt(max))) {
+      const row = document.createElement("div")
+      row.classList.add("grid-row")
+      grid.append(row);
+    }
+    const row = document.querySelector(".grid-row:last-child")
+    row.append(cella);
+  }
+  
+  generate.classList.add("hide")
+  reset.classList.remove("hide")
+})
+
+btnResetGrid.addEventListener("click", function(){
+  grid.innerHTML = "";
+
+  reset.classList.add("hide")
+  generate.classList.remove("hide")
+})

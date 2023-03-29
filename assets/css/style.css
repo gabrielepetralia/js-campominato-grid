@@ -10,21 +10,21 @@ body {
 }
 
 h1 {
-  text-align: center;
+  font-size: 4rem;
   color: white;
-  padding-top: 50px;
-  padding-bottom: 100px;
-  font-size: 5rem;
-  width: 100%;
+  margin-bottom: 80px;
+}
+
+.hide {
+  display: none;
 }
 
 .main-wrapper {
   height: 100vh;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  align-content: start;
 }
 
 .grid-container {
@@ -41,4 +41,23 @@ h1 {
   height: 50px;
   width: 50px;
   border: 2px solid white;
+}
+
+.generate-grid,
+.reset-grid {
+  margin-top: 50px;
+}
+
+.generate-grid .btn-generate-grid,
+.generate-grid .select-diff,
+.reset-grid .btn-reset-grid {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: 0px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background-color: rgb(67, 152, 174);
+  border: 2px solid white;
+  cursor: pointer;
 }
