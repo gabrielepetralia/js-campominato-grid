@@ -61,3 +61,7 @@ h1 {
   border: 2px solid white;
   cursor: pointer;
 }
+
+.clicked {
+  background-color: rgb(100, 221, 251);
+}

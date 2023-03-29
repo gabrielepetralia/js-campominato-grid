@@ -24,6 +24,11 @@ btnGenerateGrid.addEventListener("click", function(){
   for(let i = 0; i < max; i++)
   {
     const cella = document.createElement("div")
+    cella.id = i + 1;
+    cella.addEventListener("click", function(){
+      cella.classList.toggle("clicked");
+      console.log(this.id)
+    })
     cella.classList.add("cell")
     if(!(i%Math.sqrt(max))) {
       const row = document.createElement("div")
